@@ -9,8 +9,8 @@ start_message_member = """⌔︙أهلآ بك في بوت {bot_name}
 
 
 copy_right = """
-# The idea and the code was done by Mody Elhyba
-# Tele: @elhyba
+# The idea and the code was done by Almortagel
+# Tele: @Almortagel_12
 # Before using anything, please mention the source, all rights reserved
 """
 Welcome_message = """• مرحبا بك في قسم رساله الترحيب  🌾
