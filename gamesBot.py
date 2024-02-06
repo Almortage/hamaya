@@ -29,6 +29,40 @@ def gamesBgr(message: Message):
             bot.reply_to(message, "الالعاب معطله من قبل المنشئين")
 
     if (
+        msg_text in ["ذكر", "اذكار"]
+        and Compulsory_subscription(message)
+        and check_group(chat_id)
+    ):
+        if show_group(chat_id)["games"]:
+            azmsg = random.choice(azkarl)
+            bot.send_message(
+                chat_id,
+                f"<b> {azmsg}</b>",
+                reply_to_message_id=message.id,
+                reply_markup=Bottom_channel_link(),
+                parse_mode="HTML",
+            )
+        else:
+            bot.reply_to(message, "الأذكار معطله من قبل المنشئين")
+            
+    if (
+        msg_text in ["لو خيروك", "خيروك"]
+        and Compulsory_subscription(message)
+        and check_group(chat_id)
+    ):
+        if show_group(chat_id)["games"]:
+            hkmsg = random.choice(khrok)
+            bot.send_message(
+                chat_id,
+                f"<b> {hkmsg}</b>",
+                reply_to_message_id=message.id,
+                reply_markup=Bottom_channel_link(),
+                parse_mode="HTML",
+            )
+        else:
+            bot.reply_to(message, "الالعاب معطله من قبل المنشئين")
+
+    if (
         msg_text in ["ن", "نقاطي"]
         and Compulsory_subscription(message)
         and check_group(chat_id)
