@@ -262,7 +262,7 @@ def Identification_(message: Message):
         Photo_user = f"https://t.me/{chan_inf.username}"
         ttttxt = f"""𝐒𝐎𝐔𝐑𝐂𝐄 {chan_inf.title if chan_inf.title else chan_inf.first_name} ❍ 
 
-˹ 𐇮 𝑴𝑶𝑫𝒀 𖠮🚸𖠮 آلـۘهہؚيـٰـ‌ُـُ໋۠بـ໋ۘ۠ه 𐇮
+˹  𝙰𝙻𝙼𝙾𝚁𝚃𝙰𝙶𝙴𝙻
 ~"""
         try:
             bot.send_photo(
