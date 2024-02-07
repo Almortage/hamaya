@@ -260,9 +260,11 @@ def Identification_(message: Message):
             return mrk
 
         Photo_user = f"https://telegra.ph/file/14c7948ad180050fe16e4.jpg"
-        ttttxt = f"""𝐒𝐎𝐔𝐑𝐂𝐄 {chan_inf.title if chan_inf.title else chan_inf.first_name} ❍ 
-
-˹  𝙰𝙻𝙼𝙾𝚁𝚃𝙰𝙶𝙴𝙻
+        ttttxt = f"""╭──── • ◈ • ────╮
+么 𝐒𝐎𝐔𝐑𝐂𝐄 {chan_inf.title if chan_inf.title else chan_inf.first_name} ❍
+么 𝙰𝙻𝙼𝙾𝚁𝚃𝙰𝙶𝙴𝙻
+╰──── • ◈ • ────╯
+⍟ 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝚂𝙾𝚄𝚁𝙲𝙴 𝙾𝙽 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼
 ~"""
         try:
             bot.send_photo(
