@@ -257,7 +257,7 @@ def Identification_(message: Message):
                 url="https://t.me/" + chan_inf.username,
             )
             btnn = InlineKeyboardButton(
-                text=ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ,
+                text="ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ",
                 url="https://t.me/AlmortagelTech",
             )
             mrk.add(btnn)
