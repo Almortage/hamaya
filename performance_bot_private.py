@@ -61,15 +61,15 @@ def mycommands_on():
     btns = [
         KeyboardButton(text=f"اشعار الدخول {TONE} "),
         KeyboardButton(text="قسم الاشتراك الاجباري"),
-        ],
+        ]
         [
         KeyboardButton(text="الاحصائيات"),
         KeyboardButton(text="رساله الترحيب"),
-        ],
+        ]
         [
         KeyboardButton(text="الاذاعة"),
         KeyboardButton(text="الادمينة"),
-        ],
+        ]
         [
         KeyboardButton(text="المحظورين"),
         KeyboardButton(text="الردود العامة"),
