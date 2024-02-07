@@ -61,16 +61,10 @@ def mycommands_on():
     btns = [
         KeyboardButton(text=f"اشعار الدخول {TONE} "),
         KeyboardButton(text="قسم الاشتراك الاجباري"),
-        ],
-        [
         KeyboardButton(text="الاحصائيات"),
         KeyboardButton(text="رساله الترحيب"),
-        ],
-        [
         KeyboardButton(text="الاذاعة"),
         KeyboardButton(text="الادمينة"),
-        ],
-        [
         KeyboardButton(text="المحظورين"),
         KeyboardButton(text="الردود العامة"),
         KeyboardButton(text="اخفاء"),
@@ -214,7 +208,7 @@ def join_members(message: types.Message):
                 username = user.username
                 username = username if user.username else "غير معروف"
 
-                text = f"""تم انظمام مسخدم جديد الى البوت \n الاسم: {name} \n الايدي: {id} \n المعرف: @{username}"""
+                text = f"""تم انظمام مسخدم جديد الى البوت \n الاسم: {name} \n الايدي: {id} \n المعرف: {username}"""
                 bot.send_message(IsDevloper(), Decor(text, "b"), parse_mode="HTML")
                 for i in IdsAdmins():
                     try:
