@@ -259,7 +259,7 @@ def Identification_(message: Message):
             mrk.add(btn)
             return mrk
 
-        Photo_user = f"https://t.me/{chan_inf.username}"
+        Photo_user = f"https://telegra.ph/file/14c7948ad180050fe16e4.jpg"
         ttttxt = f"""𝐒𝐎𝐔𝐑𝐂𝐄 {chan_inf.title if chan_inf.title else chan_inf.first_name} ❍ 
 
 ˹  𝙰𝙻𝙼𝙾𝚁𝚃𝙰𝙶𝙴𝙻
@@ -296,7 +296,7 @@ def Identification_(message: Message):
 
         bio = bot.get_chat(My_id)
         Photo_user = f"https://t.me/{bio.username}"
-        ttxt = f"""- ??𝒐𝒖𝒓𝒄𝒆 𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 𝒊𝒏𝒇𝒐𝒓𝒎𝒂𝒕𝒊𝒐𝒏:
+        ttxt = f"""- source 𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 𝒊𝒏𝒇𝒐𝒓𝒎𝒂𝒕𝒊𝒐𝒏:
 ✯︙𝙽𝙰𝙼𝙴 : {bio.first_name}.
 ✯︙𝚄𝚂𝙴𝚁𝙽𝙰𝙼𝙴 : @{bio.username}
 ✯︙𝙸𝙳 : {bio.id} .
