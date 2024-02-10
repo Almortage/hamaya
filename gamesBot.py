@@ -5,6 +5,7 @@ from functions_to_my_bots import *
 from messagesBots import KitList
 from messagesBots import azkarl
 from messagesBots import khrok
+from messagesBots import khbot
 import random
 
 
@@ -46,6 +47,23 @@ def gamesBgr(message: Message):
             )
         else:
             bot.reply_to(message, "الأذكار معطله من قبل المنشئين")
+            
+    if (
+        msg_text in ["بوت", "البوت"]
+        and Compulsory_subscription(message)
+        and check_group(chat_id)
+    ):
+        if show_group(chat_id)["games"]:
+            abotmsg = random.choice(khbot)
+            bot.send_message(
+                chat_id,
+                f"<b> {abotmsg}</b>",
+                reply_to_message_id=message.id,
+                reply_markup=Bottom_channel_link(),
+                parse_mode="HTML",
+            )
+        else:
+            bot.reply_to(message, "ردود البوت معطل من قبل المنشئين")
             
     if (
         msg_text in ["لو خيروك", "خيروك"]
