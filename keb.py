@@ -17,6 +17,10 @@ REPLY_MESSAGE_BUTTONS = [
 
           ],
           [
+             ("ذكاء الاصطناعي"),
+              ("افلام")
+          ],
+          [
              ("لو خيروك"),
              ("كت تويت") 
           ],
@@ -57,7 +61,7 @@ REPLY_MESSAGE_BUTTONS = [
     ]
 ]
 
-@app.on_message(filters.command(["/almortagel"], "") & filters.private)
+@bot.on_message(filters.command(["/almortagel"], "") & filters.private)
 async def madison(client: Client, message: Message): 
     text = REPLY_MESSAGE
     reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONS, one_time_keyboard=True, resize_keyboard=True)
@@ -67,7 +71,7 @@ async def madison(client: Client, message: Message):
     )
 
 
-@app.on_message(filters.command("❎ ¦ حذف الكيبورد") 
+@bot.on_message(filters.command("❎ ¦ حذف الكيبورد") 
 & filters.private
 )
 async def upbkgt(client: Client, message: Message):
@@ -76,7 +80,7 @@ async def upbkgt(client: Client, message: Message):
         reply_markup=ReplyKeyboardRemove()
     )
 
-@app.on_message(filters.command(["صوره", "🕷", "صورهه", "صور"], "")
+@bot.on_message(filters.command(["صوره", "🕷", "صورهه", "صور"], "")
 & filters.group 
 & ~filters.private
 )
@@ -95,7 +99,7 @@ async def ihd(client: Client, message: Message):
     )
 
 
-@app.on_message(filters.command(["انميي", "انمي"], "")
+@bot.on_message(filters.command(["انميي", "انمي"], "")
 & filters.group 
 & ~filters.private
 )
@@ -114,7 +118,7 @@ async def ihd(client: Client, message: Message):
     )
 
 
-@app.on_message(filters.command(["متحركه. 🎬", "متحركه"], "")
+@bot.on_message(filters.command(["متحركه. 🎬", "متحركه"], "")
 & filters.group 
 & ~filters.private
 )
@@ -132,7 +136,7 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(filters.command(["تلاوات", "تلاوة"], "")
+@bot.on_message(filters.command(["تلاوات", "تلاوة"], "")
 & filters.group 
 & ~filters.private
 )
@@ -150,7 +154,7 @@ async def ihd(client: Client, message: Message):
         )
     )
     
-@app.on_message(filters.command(["اقتباسات", "اقتباس"], "")
+@bot.on_message(filters.command(["اقتباسات", "اقتباس"], "")
 & filters.group 
 & ~filters.private
 )
@@ -168,7 +172,7 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(filters.command(["هيدرا", "هيدرات"], "")
+@bot.on_message(filters.command(["هيدرا", "هيدرات"], "")
 & filters.group 
 & ~filters.private
 )
@@ -186,7 +190,7 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(filters.command(["صور", "افاتار بنات"], "")
+@bot.on_message(filters.command(["صور", "افاتار بنات"], "")
 & filters.group 
 & ~filters.private
 )
@@ -204,7 +208,7 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(filters.command(["صور شباب", "افاتار شباب"], "")
+@bot.on_message(filters.command(["صور شباب", "افاتار شباب"], "")
 & filters.group 
 & ~filters.private
 )
@@ -222,7 +226,7 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(filters.command(["سوره", "قران"], "")
+@bot.on_message(filters.command(["سوره", "قران"], "")
 & filters.group 
 & ~filters.private
 )
@@ -240,7 +244,7 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-@app.on_message(filters.command(["الشيخ", "النقشبندي", "نقشبندي"], "")
+@bot.on_message(filters.command(["الشيخ", "النقشبندي", "نقشبندي"], "")
 & filters.group 
 & ~filters.private
 )
@@ -258,7 +262,7 @@ async def ihd(client: Client, message: Message):
         )
     )
     
-@app.on_message(filters.command(["عبدالباسط", "عبدالباسط عبدالصمد"], "")
+@bot.on_message(filters.command(["عبدالباسط", "عبدالباسط عبدالصمد"], "")
 & filters.group
 & ~filters.private
 )
@@ -276,7 +280,7 @@ async def ihd(client: Client, message: Message):
         )
     )
     
-@app.on_message(filters.command(["استوري", "استوريهات. 🥹"], "")
+@bot.on_message(filters.command(["استوري", "استوريهات. 🥹"], "")
 & filters.group 
 & ~filters.private
 )
@@ -294,109 +298,3 @@ async def ihd(client: Client, message: Message):
         )
     )
 
-
-
-@app.on_message(filters.command("🍁 ¦ حظر") & filters.private & filters.group)
-async def upbkgt(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"https://telegra.ph/file/5dc0bab3462bd868b3081.jpg",
-        caption=f"""• اليك طريقه حظر اي شخص .\n\n• قم بـ استخدام الامر هكذا : /block حظر ميوزك\n\n• ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ » @AlmortagelTech .\n•⊶⊶★─⊶『[Almortagel](https://t.me/AlmortagelTech)』⊶⊶★─⊶•""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "• ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ .", url=f"https://t.me/AlmortagelTech"),
-            ],
-            ]
-        ),
-    )
-
-@app.on_message(filters.command("🖇 ¦ الغاء حظر") & filters.private & filters.group)
-async def upbkgt(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"https://telegra.ph/file/4268ef332d710c5547357.jpg",
-        caption=f"""• اليك طريقه الغاء حظر شخص .\n\n• قم بـ استخدام الامر هكذا : /unblock الغاء حظر ميوزك\n\n• ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ » @AlmortagelTech .\n•⊶⊶★─⊶『[Almortagel](https://t.me/AlmortagelTech)』⊶⊶★─⊶•""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "• ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ .", url=f"https://t.me/AlmortagelTech"),
-            ],
-            ]
-        ),
-    )
-
-@app.on_message(filters.command("🔥 ¦ المحظورين عام") & filters.private & filters.group)
-async def upbkgt(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"https://telegra.ph/file/cc2b0b6c4eea77c43b8b4.jpg",
-        caption=f"""• اليك طريقه معرفه المحظورين عام .\n\n• قم بـ استخدام الامر هكذا : /blockedusers المحظورين ميوزك\n\n• ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ » @AlmortagelTech .\n•⊶⊶★─⊶『[Almortagel](https://t.me/AlmortagelTech)』⊶⊶★─⊶•""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "• ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ .", url=f"https://t.me/AlmortagelTech"),
-            ],
-            ]
-        ),
-    )
-
-@app.on_message(filters.command("🗞 ¦ حظر عام") & filters.private & filters.group)
-async def upbkgt(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"https://telegra.ph/file/d0db8351713f77bb8450b.jpg",
-        caption=f"""• اليك طريقه الحظر العام .\n\n• قم بـ استخدام الامر هكذا :/ح ع\n\n• ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ » @AlmortagelTech .\n•⊶⊶★─⊶『[Almortagel](https://t.me/AlmortagelTech)』⊶⊶★─⊶•""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "• ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ .", url=f"https://t.me/AlmortagelTech"),
-            ],
-            ]
-        ),
-    )
-
-@app.on_message(filters.command("🔖 ¦ الغاء العام") & filters.private & filters.group)
-async def upbkgt(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"https://telegra.ph/file/611ee77edc1763ea2b07b.jpg",
-        caption=f"""• اليك طريقه الغاء الحظر العام .\n\n• قم بـ استخدام الامر هكذا : /unblock الغاء حظر ميوزك\n\n• ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ » @AlmortagelTech .\n•⊶⊶★─⊶『[Almortagel](https://t.me/AlmortagelTech)』⊶⊶★─⊶•""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "• ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ .", url=f"https://t.me/AlmortagelTech"),
-            ],
-            ]
-        ),
-    )
-
-@app.on_message(filters.command("🪂 ¦ الاحصائيات") & filters.private & filters.group)
-async def upbkgt(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"https://telegra.ph/file/571e1fb1857c8ae6e6be1.jpg",
-        caption=f"""• اليك طريقه معرفه الاحصائيات .\n\n• قم بـ استخدام الامر هكذا : الاحصائيات\n\n• ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ » @AlmortagelTech .\n•⊶⊶★─⊶『[Almortagel](https://t.me/AlmortagelTech)』⊶⊶★─⊶•""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "• ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ .", url=f"https://t.me/AlmortagelTech"),
-            ],
-            ]
-        ),
-    )
-
-@app.on_message(filters.command("ذكاء الاصطناعي") & filters.private & filters.group)
-async def upbkgt(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"https://telegra.ph/file/c544b771eeed7dbdc51a9.jpg",
-        caption=f"""• اليك طريقه معرفه سرعه البوت .\n\n• قم بـ استخدام الامر هكذا : /gpt\n\n• ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ » @AlmortagelTech .\n•⊶⊶★─⊶『[Almortagel](https://t.me/AlmortagelTech)』⊶⊶★─⊶•""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "• ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ .", url=f"https://t.me/AlmortagelTech"),
-            ],
-            ]
-        ),
-    )
