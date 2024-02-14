@@ -1,300 +1,77 @@
-import asyncio
-from pyrogram import Client, filters
-from random import choice
-from pyrogram import filters
-from config import BANNED_USERS
-from typing import Union
-from pyrogram.types import InlineKeyboardButton
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, ReplyKeyboardRemove, Message, ChatJoinRequest
+import telebot
+import random
+import messagesBots
 
-#كسمك تحياتي😂
-REPLY_MESSAGE = "**🧑🏻‍✈️︙اهلا بك بك عزيزي العضو ♥️**\n**⤵️︙ اليـكـ كيب الاعضاء الخاص بسورس المرتجل**"
+@bot.message_handler(commands=["almortagel"])
+def startt(message):
+    mrk = ReplyKeyboardMarkup(row_width=6)
 
-REPLY_MESSAGE_BUTTONS = [
-    [
-             ("المبرمج"),                   
-             ("سورس")
-
-          ],
-          [
-             ("ذكاء الاصطناعي"),
-              ("افلام")
-          ],
-          [
-             ("لو خيروك"),
-             ("كت تويت") 
-          ],
-          [
-             ("اذكار"),
-             ("صراحه") 
-          ],
-          [
-             ("افاتار شباب"),
-             ("افاتار بنات") 
-          ],
-          [
-             ("استوري"),
-              ("متحركه")
-          ],
-          [
-             ("قران"),
-              ("نقشبندي")
-          ],
-          [
-              ("عبدالباسط"),
-              ("تلاوات")
-          ],
-          [
-             ("غنيلي"),
-             ("سوال")         
-          ],
-          [
-             ("الالعاب"),
-             ("انمي")
-          ],
-          [
-             ("اقتباس"),
-             ("هيدرات")
-          ],
-          [           
-        ("❎ ¦ حذف الكيبورد")
+    ttns = [
+        KeyboardButton("تلاوات"),
+        KeyboardButton("عبد الباسط"),
+        ]
+    stns = [
+        KeyboardButton(text="نقشبندي"),
+        KeyboardButton(text="استوري"),
+        ],
+    ttnns = [
+        KeyboardButton(text="افاتار شباب"),
+        KeyboardButton(text="افاتار بنات"),
     ]
-]
-
-@bot.on_message(filters.command(["/almortagel"], "") & filters.private)
-async def madison(client: Client, message: Message): 
-    text = REPLY_MESSAGE
-    reply_markup = ReplyKeyboardMarkup(REPLY_MESSAGE_BUTTONS, one_time_keyboard=True, resize_keyboard=True)
-    await message.reply(
-        text=text,
-        reply_markup=reply_markup
-    )
-
-
-@bot.on_message(filters.command("❎ ¦ حذف الكيبورد") 
-& filters.private
-)
-async def upbkgt(client: Client, message: Message):
-    await message.reply_text(
-        text="""❎ ¦ تم حذف الكيبورد بنجاح""",
-        reply_markup=ReplyKeyboardRemove()
-    )
-
-@bot.on_message(filters.command(["صوره", "🕷", "صورهه", "صور"], "")
-& filters.group 
-& ~filters.private
-)
-async def ihd(client: Client, message: Message):
-    rl = random.randint(2,75)
-    url = f"https://t.me/vnnkli/{rl}"
-    await client.send_photo(message.chat.id,url,caption="💙 ¦ تـم اختيـار صوره لـك",parse_mode="html",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "★⌞ ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ ⌝⚡", url=f"https://t.me/AlmortagelTech")
-                ],
-            ]
-        )
-    )
-
-
-@bot.on_message(filters.command(["انميي", "انمي"], "")
-& filters.group 
-& ~filters.private
-)
-async def ihd(client: Client, message: Message):
-    rl = random.randint(3,153)
-    url = f"https://t.me/LoreBots7/{rl}"
-    await client.send_photo(message.chat.id,url,caption="💙 ¦ تـم اختيـار انمي لـك",parse_mode="html",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "★⌞ ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ ⌝⚡", url=f"https://t.me/AlmortagelTech")
-                ],
-            ]
-        )
-    )
-
-
-@bot.on_message(filters.command(["متحركه. 🎬", "متحركه"], "")
-& filters.group 
-& ~filters.private
-)
-async def ihd(client: Client, message: Message):
-    rl = random.randint(2,926)
-    url = f"https://t.me/GifWaTaN/{rl}"
-    await client.send_animation(message.chat.id,url,caption="💙 ¦ تـم اختيـار ملصق لـك",parse_mode="html",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "★⌞ ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ ⌝⚡", url=f"https://t.me/AlmortagelTech")
-                ],
-            ]
-        )
-    )
-
-@bot.on_message(filters.command(["تلاوات", "تلاوة"], "")
-& filters.group 
-& ~filters.private
-)
-async def ihd(client: Client, message: Message):
-    rl = random.randint(24,618)
-    url = f"https://t.me/EIEI06/{rl}"
-    await client.send_voice(message.chat.id,url,caption="🥹♥ ¦ تـم اختيـار تلاوة قرآنيه لـك",parse_mode="html",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "★⌞ ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ ⌝⚡", url=f"https://t.me/AlmortagelTech")
-                ],
-            ]
-        )
-    )
+    mrk.add(*ttns)
+    mrk.add(*stns)
+    mrk.add(*ttnns)
+    return mrk
     
-@bot.on_message(filters.command(["اقتباسات", "اقتباس"], "")
-& filters.group 
-& ~filters.private
-)
-async def ihd(client: Client, message: Message):
-    rl = random.randint(3,102)
-    url = f"https://t.me/LoreBots9/{rl}"
-    await client.send_photo(message.chat.id,url,caption="💙 ¦ تـم اختيـار اقتباس لـك",parse_mode="html",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "★⌞ ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ ⌝⚡", url=f"https://t.me/AlmortagelTech")
-                ],
-            ]
-        )
-    )
+@bot.message_handler(func=lambda message: True)
+def msgs(message):
+    text = message.text
+    if text == "تلاو" or text == "تلاوات" or text == "تلاوة":
+        voicerurl = "https://t.me/EIEI06/" + str(random.randint(24, 618))
+        bot.send_voice(message.chat.id, voicerurl, caption="« صلي على سيدنا محمد ﷺ »", reply_to_message_id=message.message_id, reply_markup=telebot.types.InlineKeyboardMarkup().row(
+            telebot.types.InlineKeyboardButton('✧ - المطور 🌐', url='https://t.me/Almortagel_12'),
+            telebot.types.InlineKeyboardButton('✧ - قناة مطور البوت', url='https://t.me/AlmortagelTech')
 
-@bot.on_message(filters.command(["هيدرا", "هيدرات"], "")
-& filters.group 
-& ~filters.private
-)
-async def ihd(client: Client, message: Message):
-    rl = random.randint(2,153)
-    url = f"https://t.me/flflfldld/{rl}"
-    await client.send_photo(message.chat.id,url,caption="💙 ¦ تـم اختيـار هيدرات لـك",parse_mode="html",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "★⌞ ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ ⌝⚡", url=f"https://t.me/AlmortagelTech")
-                ],
-            ]
-        )
-    )
+@bot.message_handler(func=lambda message: True)
+def msgs(message):
+    text = message.text
+    if text == "عبدالباسط":
+        voice_url = "https://t.me/telawatnader/" + str(random.randint(7, 265))
+        bot.send_voice(message.chat.id, voice_url, caption="🥹♥ ¦ تـم اختيـار الشيخ عبدالباسط لـك", reply_to_message_id=message.message_id, reply_markup=telebot.types.InlineKeyboardMarkup().row(
+            telebot.types.InlineKeyboardButton('✧ - المطور 🌐', url='https://t.me/Almortagel_12'),
+            telebot.types.InlineKeyboardButton('✧ - قناة مطور البوت', url='https://t.me/AlmortagelTech')
 
-@bot.on_message(filters.command(["صور", "افاتار بنات"], "")
-& filters.group 
-& ~filters.private
-)
-async def ihd(client: Client, message: Message):
-    rl = random.randint(2,216)
-    url = f"https://t.me/vvyuol/{rl}"
-    await client.send_photo(message.chat.id,url,caption="💙 ¦ تـم اختيـار افاتار بنات لـك",parse_mode="html",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "★⌞ ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ ⌝⚡", url=f"https://t.me/AlmortagelTech")
-                ],
-            ]
-        )
-    )
+@bot.message_handler(func=lambda message: True)
+def msgs(message):
+    text = message.text
+    if text == "استوري" or text == "استوريات":
+        voicer_url = "https://t.me/yoipopl/" + str(random.randint(2, 140))
+        bot.send_voice(message.chat.id, voicer_url, caption="🥹♥ ¦ تـم اختيـار استوري لـك", reply_to_message_id=message.message_id, reply_markup=telebot.types.InlineKeyboardMarkup().row(
+            telebot.types.InlineKeyboardButton('✧ - المطور 🌐', url='https://t.me/Almortagel_12'),
+            telebot.types.InlineKeyboardButton('✧ - قناة مطور البوت', url='https://t.me/AlmortagelTech')
+@bot.message_handler(func=lambda message: True)
+def msgs(message):
+    text = message.text
+    if text == "نقشبندي" or text == "الشيخ نقشبندي":
+        voiceurl = "https://t.me/ggcnjj/" + str(random.randint(2, 114))
+        bot.send_voice(message.chat.id, voiceurl, caption="🥹♥ ¦ تـم اختيـار الشيخ نقشبندي لـك", reply_to_message_id=message.message_id, reply_markup=telebot.types.InlineKeyboardMarkup().row(
+            telebot.types.InlineKeyboardButton('✧ - المطور 🌐', url='https://t.me/Almortagel_12'),
+            telebot.types.InlineKeyboardButton('✧ - قناة مطور البوت', url='https://t.me/AlmortagelTech')            
 
-@bot.on_message(filters.command(["صور شباب", "افاتار شباب"], "")
-& filters.group 
-& ~filters.private
-)
-async def ihd(client: Client, message: Message):
-    rl = random.randint(2,148)
-    url = f"https://t.me/vgbmm/{rl}"
-    await client.send_photo(message.chat.id,url,caption="💙 ¦ تـم اختيـار افاتار شباب لـك",parse_mode="html",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "★⌞ ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ ⌝⚡", url=f"https://t.me/AlmortagelTech")
-                ],
-            ]
-        )
-    )
+@bot.message_handler(func=lambda message: True)
+def msgs(message):
+    text = message.text
+    if text == "افاتار شباب" or text == "صور شباب":
+        voiceee_url = "https://t.me/vgbmm/" + str(random.randint(2, 148))
+        bot.send_photo(message.chat.id, voiceee_url, caption="🥹♥ ¦ تـم اختيـار افاتار شباب لـك", reply_to_message_id=message.message_id, reply_markup=telebot.types.InlineKeyboardMarkup().row(
+            telebot.types.InlineKeyboardButton('✧ - المطور 🌐', url='https://t.me/Almortagel_12'),
+            telebot.types.InlineKeyboardButton('✧ - قناة مطور البوت', url='https://t.me/AlmortagelTech') 
 
-@bot.on_message(filters.command(["سوره", "قران"], "")
-& filters.group 
-& ~filters.private
-)
-async def ihd(client: Client, message: Message):
-    rl = random.randint(2,82)
-    url = f"https://t.me/opuml/{rl}"
-    await client.send_voice(message.chat.id,url,caption="🥹♥ ¦ تـم اختيـار ايـه قرآنيه لـك",parse_mode="html",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "★⌞ ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ ⌝⚡", url=f"https://t.me/AlmortagelTech")
-                ],
-            ]
-        )
-    )
-
-@bot.on_message(filters.command(["الشيخ", "النقشبندي", "نقشبندي"], "")
-& filters.group 
-& ~filters.private
-)
-async def ihd(client: Client, message: Message):
-    rl = random.randint(2,114)
-    url = f"https://t.me/ggcnjj/{rl}"
-    await client.send_voice(message.chat.id,url,caption="🥹♥ ¦ تـم اختيـار الشيخ نقشبندي لـك",parse_mode="html",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "★⌞ ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ ⌝⚡", url=f"https://t.me/AlmortagelTech")
-                ],
-            ]
-        )
-    )
-    
-@bot.on_message(filters.command(["عبدالباسط", "عبدالباسط عبدالصمد"], "")
-& filters.group
-& ~filters.private
-)
-async def ihd(client: Client, message: Message):
-    rl = random.randint(7,265)
-    url = f"https://t.me/telawatnader/{rl}"
-    await client.send_voice(message.chat.id,url,caption="🥹♥ ¦ تـم اختيـار الشيخ عبدالباسط لـك",parse_mode="html",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "★⌞ ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ ⌝⚡", url=f"https://t.me/AlmortagelTech")
-                ],
-            ]
-        )
-    )
-    
-@bot.on_message(filters.command(["استوري", "استوريهات. 🥹"], "")
-& filters.group 
-& ~filters.private
-)
-async def ihd(client: Client, message: Message):
-    rl = random.randint(2,148)
-    url = f"https://t.me/yoipopl/{rl}"
-    await client.send_audio(message.chat.id,url,caption="💚 ¦ تـم اختيـار استوري لـك",parse_mode="html",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "★⌞ ѕᴏụʀᴄᴇ ᴀʟᴍᴏʀᴛᴀɢᴇʟ ⌝⚡", url=f"https://t.me/AlmortagelTech")
-                ],
-            ]
-        )
-    )
-
+@bot.message_handler(func=lambda message: True)
+def msgs(message):
+    text = message.text
+    if text == "افاتار بنات" or text == "صور بنات":
+        voicee_url = "https://t.me/vvyuol/" + str(random.randint(2, 216))
+        bot.send_photo(message.chat.id, voicee_url, caption="🥹♥ ¦ تـم اختيـار افاتار بنات لـك", reply_to_message_id=message.message_id, reply_markup=telebot.types.InlineKeyboardMarkup().row(
+            telebot.types.InlineKeyboardButton('✧ - المطور 🌐', url='https://t.me/Almortagel_12'),
+            telebot.types.InlineKeyboardButton('✧ - قناة مطور البوت', url='https://t.me/AlmortagelTech') 
