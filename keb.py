@@ -12,19 +12,67 @@ from telebot import types
 from functions_to_my_bots import *
 import messagesBots
 
+# My_id = IsDevloper()
 
-def send_member_private(message: types.Message):
-    global cv, vc
-    mtxt = message.text
-    CHid = message.from_user.id
-            if mtxt == "/almortagel":
-            bot.send_message(
-                message.chat.id,
-                text=messagesBots.message_for_admin,
-                parse_mode="HTML",
-                reply_to_message_id=message.id,
-                reply_markup=mycommands_on(),
-            )
+
+def Decor(text, type=[None, "b", "s", "del", "pre", "user", "url"], id=None, url=None):
+    if type != None:
+        if type == "b":
+            return f"<b>{text}</b>"
+
+        elif type == "s":
+            return f"<s>{text}</s>"
+
+        elif type == "del":
+            return f"<del>{text}</del>"
+
+        elif type == "pre":
+            return f"<code>{text}</code>"
+
+        elif type == "user":
+            return f"""<a href='tg://user?id={id}'>  {text}  </a>"""
+
+        elif type == "url":
+            return f"<a href={url}>{text}</a>"
+
+
+def must_sub(bot, msg, Group_ID, InlineKeyboardMarkup, InlineKeyboardButton):
+    # Create an invite link class that contains info about the created invite link using create_chat_invite_link() with parameters
+    invite = bot.create_chat_invite_link(
+        Group_ID, member_limit=1, expire_date=int(time()) + 45
+    )  # Here, the link will auto-expire in 45 seconds
+    InviteLink = invite.invite_link  # Get the actual invite link from 'invite' class
+
+    mrkplink = InlineKeyboardMarkup()  # Created Inline Keyboard Markup
+    mrkplink.add(
+        InlineKeyboardButton(bot.get_chat(Group_ID).title, url=InviteLink)
+    )  # Added Invite Link to Inline Keyboard
+
+    m = bot.send_message(
+        msg.chat.id, Ismessage(), reply_markup=mrkplink, reply_to_message_id=msg.id
+    )
+    return m
+    
+def join_members(message: types.Message):
+    global senderMsg
+    if check_muted(message.from_user.id):
+        senderMsg = [message.from_user, message.id]
+        user = message.from_user
+        full_name = str(user.first_name) + " " + str(user.last_name)
+        username = str(user.username)
+        Ids = int(user.id)
+        msg = message.text
+        name = Decor(full_name, id=Ids, type="user")
+        if message.text != "/almortagel":
+            if showGloblaReply(message.text):
+                bot.send_message(
+                    message.chat.id,
+                    Decor(showGloblaReply(message.text), "b"),
+                    parse_mode="HTML",
+                    reply_to_message_id=message.id,
+                )
+                
+def mycommands_on():
     mrk = ReplyKeyboardMarkup(row_width=6)
 
     ttns = [
@@ -93,4 +141,3 @@ def msgs(message):
         bot.send_photo(message.chat.id, voicee_url, caption="🥹♥ ¦ تـم اختيـار افاتار بنات لـك", reply_to_message_id=message.message_id, reply_markup=telebot.types.InlineKeyboardMarkup().row(
             telebot.types.InlineKeyboardButton('✧ - المطور 🌐', url='https://t.me/Almortagel_12'),
             telebot.types.InlineKeyboardButton('✧ - قناة مطور البوت', url='https://t.me/AlmortagelTech') 
-            
