@@ -69,13 +69,19 @@ def mycommands_on():
     btnss = [
         KeyboardButton(text="الاذاعة"),
         KeyboardButton(text="الادمينة"),
+    ]
+    btnsss = [
         KeyboardButton(text="المحظورين"),
         KeyboardButton(text="الردود العامة"),
+    ]
+    btness = [
         KeyboardButton(text="اخفاء"),
     ]
     mrk.add(*btns)
     mrk.add(*btnsd)
     mrk.add(*btnss)
+    mrk.add(*btnsss)
+    mrk.add(*btness)
     return mrk
 
 
